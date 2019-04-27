@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="base-layout.xhtml">
+	<ui:define name="content">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="header">
+						<h4 class="title">Customer</h4>
+						<p class="category">Listado de Clientes</p>
+					</div>
+					
+					<script type="text/javascript">
+/*
+	
+		function pupulateCustomer() {
+			
+			var fname = $("input[name=name]").val();
+			var fagency = $("select[name=agency]").selectedItem().val();
+			var flocation = $("input[name=location]").selectedItem().val();
+			var fphoneNumber = $("input[name=phoneNumber]").val();
+			var femail = $("input[name=email]").val();
+			
+			Person = function() { };
+			//Valores deben ser inicializados vacios y lyuego llenarlos. Por temas del Demo
+			Person.prototype = {
+			    name: fname,
+			    email : femail,
+			    phoneNumber : fphoneNumber,
+			    location: {
+			    	id : flocation,
+			    },
+			    
+			    agency:  {
+			        id: fagency,
+			    }
+			};
+			return new Person();
+		}
+		
+		function addCustomer(){
+			
+			var customer = populateCustomer();
+			$.ajax(){
+				
+				
+			}
+		}
+*/
+		
+	</script>
+					
+					<div class="content">
+						<div id="addCustomerDiv">
+							
+							<h:form id="customer-form">
+								<p:dialog header="Add Customer" widgetVar="dlg" resizable="false">
+									<div class="row">
+										<div class="col-md-3">
+                                            <div class="form-group">
+                                                <h:outputLabel for="location" value="Location" />
+												<select id="location" name="name" onchange="loadAgency()" class="form-control">
+           										    <ui:repeat value="#{customerView.locations}" var="location"> 
+														<option value="#{location.id}"><h:outputText value="#{location.name}" /></option>
+													</ui:repeat>
+												</select>
+											</div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <h:outputLabel for="agency" value="Concesionario" />
+                                                <select id="agency" name="agency" class="form-control" >
+												</select>
+                                            </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                      	<div class="col-md-3">
+                                            <div class="form-group">
+                                                <h:outputLabel for="name" value="Name" />
+                                                <p:inputText id="name" styleClass="form-control" value="#{customerView.customer.name}"
+														required="true" label="name" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <h:outputLabel for="phoneNumber" value="Phone Number" />
+                                                <p:inputText id="phoneNumber" styleClass="form-control" value="#{customerView.customer.phoneNumber}"
+														required="true" label="phoneNumber" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <h:outputLabel for="email" value="email" />
+                                                <p:inputText id="email" value="#{customerView.customer.email}"
+													required="true" label="email" styleClass="form-control" />
+                                            </div>
+                                        </div>
+									 </div>	
+										<f:facet name="footer">
+											<button type="button" oncomplete="addCustomerhandler(xhr, status, args)" 
+												onClick="addCustomer();" 
+												class="btn btn-success btn-fill pull-right"><i class="pe-7s-add-user"/></button>
+										</f:facet>
+								  </div>
+								</p:dialog>
+							</h:form>
+						</div>
+
+
+						<div id="listCustomers" class="ct-chart ct-perfect-fourth">
+							<div class="content table-responsive table-full-width">
+								<p:dataTable var="customer" value="#{customerView.customers}"
+									tableStyleClass="table table-striped table-bordered table-condensed">
+									<p:column headerText="Id">
+										<h:outputText value="#{customer.id}" />
+									</p:column>
+
+									<p:column headerText="Nombre">
+										<h:outputText value="#{customer.name}" />
+									</p:column>
+
+									<p:column headerText="Telefono">
+										<h:outputText value="#{customer.email}" />
+									</p:column>
+
+									<p:column headerText="Concesionario">
+										<h:outputText value="#{customer.agency.name}" />
+									</p:column>
+									<p:column headerText="Ciudad">
+										<h:outputText value="#{customer.agency.location.name}" />
+									</p:column>
+									<p:column> 
+									 <div>	
+										<button type="button" oncomplete="addCustomerhandler(xhr, status, args)" 
+												onClick="changeCustomerStatus(#{customer.id},'enable')" 
+												class="btn btn-success btn-fill pull-right"><i class="pe-7s-play"/></button>
+												
+										<button type="button" oncomplete="addCustomerhandler(xhr, status, args)" 
+												onClick="changeCustomerStatus(#{customer.id},'disable')" 
+												class="btn btn-warning btn-fill pull-right"><i class="pe-7s-angle-down-circle"/></button>
+												
+										<button type="button" oncomplete="addCustomerhandler(xhr, status, args)" 
+												onClick="changeCustomerStatus(#{customer.id},'delete')" 
+												class="btn btn-danger btn-fill pull-right"><i class="pe-7s-close-circle"/></button>
+												
+										<button type="button" oncomplete="addCustomerhandler(xhr, status, args)" 
+												onClick="edit(#{customer.id})" 
+												class="btn btn-info btn-fill pull-right"><i class="pe-7s-pen"/></button>
+									 </div>
+								    </p:column>
+								</p:dataTable>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+
+</html>
