@@ -35,23 +35,20 @@ public class MainController {
 	}
 	@RequestMapping(value = "/index")
 	public String index() {
-		return "index";
+		return "customer";
 	}
 	
-	@RequestMapping(value = "/dashboard",  method = RequestMethod.GET)
-	public String dashboard() {
-		return "dashboard";
-	}
+
     
     @RequestMapping(value = "/customer",  method = RequestMethod.GET)
 	public String showCustomerView() {
 		return "customer";
 	}
     
-	@RequestMapping(value = "/report", params = "id",  method = RequestMethod.GET)
-	public String showReportView() {
-		return "report";
-	}
+//	@RequestMapping(value = "/report", params = "id",  method = RequestMethod.GET)
+//	public String showReportView() {
+//		return "report";
+//	}
 	//Preferiblemente un parse con json pero para agilizar
 	@RequestMapping(value = "/agencies",  method = RequestMethod.GET, produces = "application/json")
 	public @ResponseBody List<Agency> showAgencyUtilView(@RequestParam("id") Long id) {
