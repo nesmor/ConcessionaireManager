@@ -29,7 +29,8 @@ Manejo de clientes para agencia de concesionarios.
 -Implementacion de la clase logger para mensajes de la aplicacion. 
 - Creacion de excepciones personalizadas. 
 
-Limitaciones en capa de acceso a datos: i18 para cambios de lenguajes. Si la arquitectura se basa en microservicios, es necesario centralizar los mensajes para aplicaciones multilenguaje. 
+####Limitaciones en capa de acceso a datos: 
+i18 para cambios de lenguajes. Si la arquitectura se basa en microservicios, es necesario centralizar los mensajes para aplicaciones multilenguaje. 
 
 ### Capa Vista Controlador.
 -Adaptabilidad a api desconocidas por el desarrollador (PrimeFaces). El proceso de adaptacion fue rapido debido a la similitud en cuanto al uso de otros frameworks como Struts.
@@ -37,7 +38,8 @@ Limitaciones en capa de acceso a datos: i18 para cambios de lenguajes. Si la arq
 -En el lado del controlador se envia la informacion en formato JSON y en la vista se crean los options dinamicamente con jquery.
 -Capacidad de buscar un camino adicional en cuanto a inconvenientes en el camino original. Esta referencia se realiza por el inconveniente con la libreria js de Primefaces, que presento problemas de compatibilidad con la del diseno HTML. Luego de tratar de emplear el uso de los botones basados en el api de commandbutton, se decidio por cambiar a html button y a ajax para las peticiones. 
 
-Limitantes en cuanto al frontend: Necesidad de sacar el texto a archivos i18 de traduccion. 
+#### Limitantes en cuanto al frontend: 
+Necesidad de sacar el texto a archivos i18 de traduccion. 
 
 
 
