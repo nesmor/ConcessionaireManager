@@ -1,5 +1,5 @@
 #  ConcessionaireManager
-Customer manager to cars agencies
+Manejo de clientes para agencia de concesionarios.
 
 ![Cat](https://github.com/nesmor/ConcessionaireManager/blob/master/src/main/webapp/assets/img/agency_dashboard.png)
 
