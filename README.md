@@ -41,6 +41,19 @@ i18 para cambios de lenguajes. Si la arquitectura se basa en microservicios, es 
 #### Limitantes en cuanto al frontend: 
 Necesidad de sacar el texto a archivos i18 de traduccion. 
 
+### Compilacion y ejecucion.
+
+#git clone https://github.com/nesmor/ConcessionaireManager.git
+
+#mvn clean
+#mvn install
+
+Desde el ide de eclipse run as Spring Boot Application.
+
+Ingresar a la url http://localhost:8080/customer
+
+
+
 
 
 
